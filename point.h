@@ -24,6 +24,11 @@ public:
 
 };
 
+ostream &operator<<(ostream &s , point &P){
+    s << "()"<<P.getX() << "," << P.getY() <<")" << endl;
+    return s;
+};
+
 
 
 #endif
