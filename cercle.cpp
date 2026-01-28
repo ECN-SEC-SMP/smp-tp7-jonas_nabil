@@ -25,3 +25,12 @@ void cercle::setR(double R){
 double cercle::getR() const {
     return this->R;
 }
+
+ostream& operator<<(ostream& s, const cercle &cercle){
+    s << "--- Attributs du cercle ---" << endl;
+    s << "Rayon : " << cercle.getR() << endl;
+    s << "Surface : " << cercle.surface() << endl;
+    s << "Perimetre : " << cercle.perimetre() <<endl;
+    s << "------------------------------ " <<endl;
+    return s;
+}

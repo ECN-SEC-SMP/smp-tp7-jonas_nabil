@@ -10,13 +10,18 @@ class carre: protected rectangle {
 
     public:
 
-    double getCote();
+    double getCote() const;
     void setCote(double c);
 
     carre();
     carre(double cote, point centre);
 
+    double perimetre() const override;
+    double surface() const override;
 
 };
+
+ostream& operator<<(ostream& s, carre& const c);
+
 
 #endif

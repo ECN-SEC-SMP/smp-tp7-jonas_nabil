@@ -22,5 +22,6 @@ public :
     double surface() const override;
 
 };
+ostream& operator<<(ostream &s, const cercle &cercle);
 
-#endif CERCLE
+#endif 

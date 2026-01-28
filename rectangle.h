@@ -14,17 +14,16 @@ public :
     rectangle();
     rectangle(double longueur, double largeur, point centre);
 
-    double getLargeur();
-    double getLongueur();
+    double getLargeur() const;
+    double getLongueur() const;
 
     void setLargeur(double d);
     void setLongueur(double d);
 
     double perimetre() const override;
     double surface() const override;
-
-
 };
 
+ostream& operator<<(ostream& s, rectangle const &r);
 
 #endif 

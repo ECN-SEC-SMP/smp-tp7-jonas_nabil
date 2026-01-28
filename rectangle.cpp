@@ -4,11 +4,11 @@
 
 using namespace std;
 
-double rectangle::getLargeur(){
+double rectangle::getLargeur() const{
     return this->Largeur;
 }
 
-double rectangle::getLongueur(){
+double rectangle::getLongueur() const{
     return this->Longueur;
 }
 
@@ -36,4 +36,15 @@ double rectangle::surface() const{
 
 double rectangle::perimetre() const{
     return (2*(this->Longueur + this->Largeur));
+}
+
+ostream& operator<<(ostream& s, const rectangle& r){
+    s << "--- Attributs du rectangle ---" << endl;
+    s << "Longueur : " << r.getLongueur() << endl;
+    s << "Largeur : " << r.getLargeur() << endl;
+    s << "Surface : " << r.surface() << endl;
+    s << "Perimetre : " << r.perimetre() <<endl;
+    s << "------------------------------ " << endl;
+    
+    return s;
 }
