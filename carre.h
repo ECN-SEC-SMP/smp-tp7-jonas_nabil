@@ -4,7 +4,7 @@
 #include "rectangle.h"
 
 class carre: public rectangle {
-
+    
 };
 
 #endif
