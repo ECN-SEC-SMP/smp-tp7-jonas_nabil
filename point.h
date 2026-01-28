@@ -8,8 +8,8 @@ private:
     double y;
 
 public:
-    double getX();
-    double getY();
+    double getX() const;
+    double getY() const;
 
     void setX(double x);
     void setY(double y);
@@ -24,8 +24,8 @@ public:
 
 };
 
-ostream &operator<<(ostream &s , point &P){
-    s << "()"<<P.getX() << "," << P.getY() <<")" << endl;
+ostream &operator<<(ostream &s , point const &P){
+    s << "("<<P.getX() << "," << P.getY() <<")" << endl;
     return s;
 };
 

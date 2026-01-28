@@ -2,10 +2,10 @@
 #include "point.h"
 using namespace std;
 
-double point::getX(){
+double point::getX() const {
     return this->x;
 }
-double point::getY(){
+double point::getY() const {
     return this->y;
 }
 
