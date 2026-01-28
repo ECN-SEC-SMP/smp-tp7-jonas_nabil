@@ -1,8 +1,8 @@
 #ifndef CARRE
 #define CARRE
+#include "forme.h"
 
-
-class carre{
+class carre: public forme{
 
 };
 

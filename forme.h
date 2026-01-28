@@ -6,9 +6,11 @@ using namespace std;
 
 
 class forme{
-
+    private :
+    
     point centre;
 
+    public :
     ~forme();
     forme(point centre);
 

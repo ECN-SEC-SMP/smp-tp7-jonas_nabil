@@ -1,8 +1,8 @@
 #ifndef RECTANGLE
 #define RECTANGLE
+#include "forme.h"
 
-
-class rectangle{
+class rectangle: public forme{
 
 };
 

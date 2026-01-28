@@ -1,7 +1,8 @@
 #ifndef CERCLE
 #define CERCLE
+#include "forme.h"
 
-class cercle {
+class cercle: public forme {
 
 
 };
