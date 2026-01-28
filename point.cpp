@@ -51,3 +51,8 @@ ostream& operator<<(ostream& os, const Point& p) { // préciser que getX et Y so
     os << "x: " <<p.getX()<< " y: " << p.getY() << endl; // getX et Y peuvent modifier p et donc accepte pas les fonctions.
     return os;
 }
+
+void Point::operator+=(Point p){
+    this->x += p.x;
+    this->y += p.y;
+}

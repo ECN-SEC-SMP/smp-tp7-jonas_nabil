@@ -29,7 +29,7 @@ class Point{
         void setX(double x);
         void setY(double y);
 
-        
+        void operator+=(Point p);
 
 };
 

@@ -48,4 +48,8 @@ int main(){
     // test operator
 
     cout << p1 << endl;
+
+
+    p1+=p2;
+    cout << p1 << endl;
 }
