@@ -18,6 +18,7 @@ public:
 
     point();
     point(double x, double y);
+    point(const point &P);
 
 };
 

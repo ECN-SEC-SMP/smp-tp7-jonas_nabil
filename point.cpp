@@ -28,3 +28,8 @@ point::point(double x, double y){
     this->x = x;
     this->y = y;
 }
+
+point::point(const point &P){
+    this->x = P.x;
+    this->y = P.y;
+}
