@@ -17,7 +17,6 @@ public:
     void translater(point P);
     void translater(double x, double y);
 
-    bool egal(const point &P);
 
     point();
     point(double x, double y);
