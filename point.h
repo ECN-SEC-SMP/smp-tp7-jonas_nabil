@@ -11,6 +11,8 @@ public:
     double getX();
     double getY();
 
+    void setX(double x);
+    void setY(double y);
 
     void translater(point P);
     void translater(double x, double y);

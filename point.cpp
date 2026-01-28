@@ -33,3 +33,11 @@ point::point(const point &P){
     this->x = P.x;
     this->y = P.y;
 }
+
+void point::setX(double x){
+    this->x = x;
+}
+
+void point::setY(double y){
+    this->y = y;
+}
