@@ -16,8 +16,8 @@ class Point{
 
         ~Point();
 
-        Point translater();
-        Point translater(double _x, double _y);
+        void translater(Point p);
+        void translater(double _x, double _y);
 
         double getX();
         double getY();
