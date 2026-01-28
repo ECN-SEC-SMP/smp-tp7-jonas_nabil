@@ -4,7 +4,7 @@
 
 class rectangle: public forme{
 
-private:
+protected:
 
     double Largeur;
     double Longueur;

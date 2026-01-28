@@ -20,8 +20,7 @@ public:
     virtual double surface() const = 0;
 
     void operator+=(const point &p);
-
-    friend ostream& operator<<(ostream& s, const forme& f);
 };
 
+ostream& operator<<(ostream& s, const forme& f);
 #endif
