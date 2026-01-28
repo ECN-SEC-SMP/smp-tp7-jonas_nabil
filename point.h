@@ -16,7 +16,7 @@ public:
     void translater(double x, double y);
 
 
-    void origin(point P);
+    point Point();
 };
 
 #endif

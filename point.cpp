@@ -13,3 +13,8 @@ void point::translater(point P){
     this->x += P.getX();
     this->y += P.getY();
 }
+
+point::point(){
+    this->x = 0;
+    this->y = 0;
+}
