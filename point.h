@@ -16,7 +16,9 @@ public:
     void translater(double x, double y);
 
 
-    point Point();
+    point();
+    point(double x, double y);
+
 };
 
 #endif
