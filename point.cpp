@@ -41,3 +41,8 @@ void point::setX(double x){
 void point::setY(double y){
     this->y = y;
 }
+
+ostream &operator<<(ostream &s, const point &P){
+    s << "("<<P.getX() << "," << P.getY() <<")" << endl;
+    return s;
+}
