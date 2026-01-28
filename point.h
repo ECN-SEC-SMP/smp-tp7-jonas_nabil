@@ -1,5 +1,5 @@
-#ifndef POINT.H
-#define POINT.H
+#ifndef POINT
+#define POINT
 
 class point{
 
@@ -17,11 +17,14 @@ public:
     void translater(point P);
     void translater(double x, double y);
 
+    bool egal(const point &P);
 
     point();
     point(double x, double y);
     point(const point &P);
 
 };
+
+
 
 #endif

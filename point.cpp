@@ -41,3 +41,12 @@ void point::setX(double x){
 void point::setY(double y){
     this->y = y;
 }
+
+bool point::egal(const point &P){
+        if(P.x == this->x && P.y == this->y){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
