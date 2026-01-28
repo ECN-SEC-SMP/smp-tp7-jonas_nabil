@@ -21,7 +21,7 @@ public:
 
     void operator+=(const point &p);
 
-    friend ostream& operator<<(std::ostream& s, const forme& f);
+    friend ostream& operator<<(ostream& s, const forme& f);
 };
 
 #endif
