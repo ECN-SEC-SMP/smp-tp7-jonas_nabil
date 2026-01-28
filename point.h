@@ -16,18 +16,16 @@ public:
 
     void translater(point P);
     void translater(double x, double y);
-
+    void operator+=(const point &P);
 
     point();
     point(double x, double y);
     point(const point &P);
 
+    
+
 };
 
-ostream &operator<<(ostream &s , point const &P);
-
-
-
-
+ostream &operator<<(ostream &s ,const point &P);
 
 #endif

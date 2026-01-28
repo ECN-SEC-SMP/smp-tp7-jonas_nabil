@@ -46,3 +46,8 @@ ostream &operator<<(ostream &s, const point &P){
     s << "("<<P.getX() << "," << P.getY() <<")" << endl;
     return s;
 }
+
+void point::operator+=(const point &P){
+    this->x += P.x;
+    this->y += P.y;
+}
