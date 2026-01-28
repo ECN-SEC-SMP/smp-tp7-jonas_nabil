@@ -9,6 +9,7 @@ class forme{
 
     point centre;
 
+    ~forme();
     forme(point centre);
 
     void perimetre();

@@ -20,6 +20,7 @@ public:
     void translater(double x, double y);
     void operator+=(const point &P);
 
+    ~point();
     point();
     point(double x, double y);
     point(const point &P);
