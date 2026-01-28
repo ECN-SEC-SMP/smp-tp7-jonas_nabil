@@ -1,5 +1,7 @@
+using namespace std;
 #ifndef POINT
 #define POINT
+#include <iostream>
 
 class point{
 
