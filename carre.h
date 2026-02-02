@@ -21,7 +21,7 @@ class carre: protected rectangle {
 
 };
 
-ostream& operator<<(ostream& s, carre& const c);
+ostream &operator<<(ostream& s, carre& const c);
 
 
 #endif
