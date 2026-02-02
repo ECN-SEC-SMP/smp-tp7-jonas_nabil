@@ -132,6 +132,9 @@ Définir une classe `ListeFormes` utilisant un `vector` pour gérer une collecti
 ### Spécifications
 **Classe ListeFormes**
 *   **Structure de données :** `vector<Forme*>` (Liste de pointeurs vers des formes).
+*   **Constructeur & Destructeur :**
+    *   `ListeFormes()` : Initialise une liste vide.
+    *   `~ListeFormes()` : Libère la mémoire des formes allouées dynamiquement.
 *   **Méthodes :**
     *   `ajouter(Forme*)` :
         *   **Entrée :** Pointeur vers une forme.
@@ -139,9 +142,12 @@ Définir une classe `ListeFormes` utilisant un `vector` pour gérer une collecti
     *   `surfaceTotale()` :
         *   **Sortie :** Réel.
         *   **Rôle :** Parcourt la liste et somme les résultats de la méthode `surface()` de chaque forme.
-    *   `boiteEnglobante()` :
-        *   **Sortie :** Objet (Rectangle ou dimensions).
-        *   **Rôle :** Détermine les coordonnées min/max (xmin, xmax, ymin, ymax) de l'ensemble des formes pour définir le rectangle englobant.
+    *   `boiteEnglobante(double&, double&, double&, double&)` :
+        *   **Entrées :** Références vers minX, maxX, minY, maxY.
+        *   **Rôle :** Calcule les coordonnées min/max de l'ensemble des formes et met à jour les variables passées en référence.
+    *   `getNbFormes()` :
+        *   **Sortie :** Entier.
+        *   **Rôle :** Retourne le nombre de formes dans la liste.
 
 ---
 
@@ -179,6 +185,45 @@ y : 20.5
 x: 15.5 y: 20.5
 
 x: 31 y: 41
+
+
+--- Test Rectangle ---
+Position (0,0) | Rectangle, longueur: 10 hauteur: 5
+Surface : 50
+
+--- Test Carre ---
+Position : (0, 0) | Carré, côté: 4
+Surface : 16
+
+--- Test Cercle ---
+Position : (0, 0) | Cercle, rayon: 3
+Surface : 28.26
+
+--- Test Translater sur Rectangle ---
+Rectangle avant translater :
+Position (0,0) | Rectangle, longueur: 8 hauteur: 4
+Rectangle après translater(10, 5) :
+Position (10,5) | Rectangle, longueur: 8 hauteur: 4
+
+--- Test Translater sur Carre ---
+Carré avant translater :
+Position : (0, 0) | Carré, côté: 3
+Carré après translater(7, 2) :
+Position : (7, 2) | Carré, côté: 3
+
+--- Test Translater sur Cercle ---
+Cercle avant translater :
+Position : (0, 0) | Cercle, rayon: 5
+Cercle après translater(Point(15, 10)) :
+Position : (15, 10) | Cercle, rayon: 5
+
+--- Test ListeFormes ---
+Ajout de r2, k2, c2 a la liste...
+Nombre de formes : 3
+Surface totale de la liste : 119.5
+Boite englobante : 
+Min X : 5.5 Max X : 20
+Min Y : 0.5 Max Y : 15
 ```
 
 Ces résultats confirment que :

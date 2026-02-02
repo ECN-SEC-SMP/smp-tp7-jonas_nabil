@@ -1,55 +1,59 @@
 #include "listeformes.h"
-#include <limits> // For infinity
+#include <limits> // Pour utiliser numeric_limits (infini)
 
 using namespace std;
 
+// Constructeur
 ListeFormes::ListeFormes() {
-    // Vector manages its own memory for pointers, 
-    // but we need to be careful if we own the objects or not.
-    // In this TP context, valid pointers are usually passed from main.
+    // Le vecteur gère sa propre mémoire pour le stockage des pointeurs,
+    // mais pas pour les objets pointés.
 }
 
+// Destructeur
 ListeFormes::~ListeFormes() {
-    // Depending on ownership implementation. 
-    // Usually in simple TPs we might not delete pointers if they are stack allocated in main,
-    // or we might if they are new'ed.
-    // However, given the context of existing code using stack objects often, 
-    // we should just clear likely, or assume main manages lifetime if passed by address.
-    // BUT, usually "adding" to a list implies shared ownership or simple aggregation.
-    // Let's assume aggregation used via `main` stack variables or `new`.
-    // If objects are passed as pointers, clearing vector is enough. 
-    // If we want to be safe about clean up, we should know ownership policy.
-    // Since we don't know, we'll just clear the vector.
+    // Si la ListeFormes est détruite, on vide juste le vecteur de pointeurs.
+    // Attention: ça ne supprime pas les objets Forme pointés.
+    // Dans ce TP, on suppose que les formes sont gérées ailleurs (ex: dans le main).
     formes.clear();
 }
 
+// Ajouter une forme à la liste
 void ListeFormes::ajouter(Forme* f) {
-    formes.push_back(f);
+    formes.push_back(f); // On ajoute le pointeur à la fin du vecteur
 }
 
+// Calculer la surface totale
 double ListeFormes::surfaceTotale() const {
     double total = 0;
+    // On parcourt toutes les formes de la liste
     for (Forme* f : formes) {
+        // Polymorphisme : f appelle la méthode surface() spécifique à son type (Rectangle, Cercle...)
         total += f->surface();
     }
     return total;
 }
 
+// Calculer la boîte englobante de toutes les formes
 void ListeFormes::boiteEnglobante(double& minX, double& maxX, double& minY, double& maxY) const {
+    // Si la liste est vide, on met tout à 0
     if (formes.empty()) {
         minX = 0; maxX = 0; minY = 0; maxY = 0;
         return;
     }
 
+    // On initialise avec les valeurs extrêmes inverses pour être sûr de les écraser
     minX = numeric_limits<double>::max();
     maxX = numeric_limits<double>::lowest();
     minY = numeric_limits<double>::max();
     maxY = numeric_limits<double>::lowest();
 
+    // On parcourt chaque forme
     for (Forme* f : formes) {
         double fxMin, fxMax, fyMin, fyMax;
+        // On récupère les bornes de la forme courante
         f->getBornes(fxMin, fxMax, fyMin, fyMax);
 
+        // On met à jour les bornes globales si nécessaire
         if (fxMin < minX) minX = fxMin;
         if (fxMax > maxX) maxX = fxMax;
         if (fyMin < minY) minY = fyMin;
@@ -57,6 +61,7 @@ void ListeFormes::boiteEnglobante(double& minX, double& maxX, double& minY, doub
     }
 }
 
+// Obtenir le nombre de formes
 int ListeFormes::getNbFormes() const {
     return formes.size();
 }
