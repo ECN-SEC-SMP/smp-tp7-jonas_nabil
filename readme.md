@@ -235,4 +235,4 @@ Ces résultats confirment que :
     * **Collection hétérogène :** La classe gère correctement l'ajout de différents types (Rectangle, Carré, Cercle) dans un `vector<Forme*>`.
     * **Polymorphisme :** La surface totale (119.5) prouve que le programme utilise la liaison dynamique pour appeler la bonne méthode `surface()` de chaque objet.
     * **Algorithme :** La boîte englobante est correctement calculée en parcourant toute la liste pour trouver les extrêmes (Min/Max).
-    * **Mémoire :** L'exécution se termine proprement, validant le destructeur et la libération de la mémoire.
+    
