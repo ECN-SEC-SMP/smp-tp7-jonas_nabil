@@ -13,11 +13,26 @@ Forme::~Forme(){
 }
 
 
-ostream& operator<<(ostream& os, const Forme& p) { // préciser que getX et Y sont const car sinon la fonction croit que 
-    os << "x" <<endl; // getX et Y peuvent modifier p et donc accepte pas les fonctions.
+void Forme::translater(double dx, double dy) {
+    this->p.translater(dx, dy);
+}
+
+void Forme::translater(const Point& p) {
+    this->p.translater(p);
+}
+
+ostream& operator<<(ostream& os, const Forme& f) { 
+    // On peut maintenant accéder à f.p car on est "friend"
+    // Et on utilise getX() car x est privé dans Point
+    os << "Position : (" << f.p.getX() << ", " << f.p.getY() << ")";
     return os;
 }
 
-void Forme::operator+=(Forme p){
-    this->p.translater(p.p.getX(), p.p.getY());
+void Forme::operator+=(const Forme& autreForme){
+    // On accède à 'p' (autorisé car on est dans Forme)
+    // Puis on utilise getX() (autorisé car public dans Point)
+    double x_autre = autreForme.p.getX(); 
+    double y_autre = autreForme.p.getY();
+
+    this->p.translater(x_autre, y_autre);
 }

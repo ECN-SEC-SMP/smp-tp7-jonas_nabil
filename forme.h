@@ -19,10 +19,15 @@ class Forme{
         virtual double perimetre() = 0;
         virtual double surface() = 0;
 
-        void operator+=(Forme f);
+        void translater(double dx, double dy);
+        void translater(const Point &p);
+
+        void operator+=(const Forme &f);
+
+        friend ostream& operator<<(ostream& s, const Forme& f);
 
 };
 
-ostream& operator<<(ostream&s,Forme const& f);
+
 
 #endif 

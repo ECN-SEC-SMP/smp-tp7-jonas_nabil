@@ -10,16 +10,20 @@ using namespace std;
 #include <iostream>
 
 class Cercle : public Forme{
-    int r;
+    private:
+        int r;
     public: 
         Cercle();
+        Cercle(int r);
         ~Cercle();
 
         double perimetre() override;
         double surface() override;
 
+        int getR() const;
 
 };
 
+ostream& operator<<(ostream&s,Cercle const& c);
 
 #endif 

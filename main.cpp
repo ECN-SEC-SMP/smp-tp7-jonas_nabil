@@ -1,5 +1,8 @@
 #include <iostream>
 #include "point.h"
+#include "rectangle.h"
+#include "carre.h"
+#include "cercle.h"
 
 using namespace std;
 
@@ -52,4 +55,58 @@ int main(){
 
     p1+=p2;
     cout << p1 << endl;
+
+    // ==========================================
+    //           NOUVEAUX TESTS (FORMES)
+    // ==========================================
+  
+
+    // --- TEST RECTANGLE ---
+    cout << "\n--- Test Rectangle ---" << endl;
+    Rectangle r(10, 5); // Largeur 10, Hauteur 5
+    cout << r; // Affiche 10 et 5
+    cout << "Surface : " << r.surface() << endl; // Affiche 50
+
+    // --- TEST CARRE ---
+    cout << "\n--- Test Carre ---" << endl;
+    Carre k(4); // Côté 4
+    cout << k; // Affiche 4
+    cout << "Surface : " << k.surface() << endl; // Affiche 16
+
+    // --- TEST CERCLE ---
+    cout << "\n--- Test Cercle ---" << endl;
+    Cercle c(3); // Rayon 3
+    cout << c; // Affiche 3
+    cout << "Surface : " << c.surface() << endl; // Affiche ~28.26
+
+    // ==========================================
+    //      TESTS METHODE TRANSLATER
+    // ==========================================
+
+    cout << "\n--- Test Translater sur Rectangle ---" << endl;
+    Rectangle r2(8, 4);
+    cout << "Rectangle avant translater :" << endl;
+    cout << r2;
+    cout << "Rectangle après translater(10, 5) :" << endl;
+    r2.translater(10, 5);
+    cout << r2;
+
+    cout << "\n--- Test Translater sur Carre ---" << endl;
+    Carre k2(3);
+    cout << "Carré avant translater :" << endl;
+    cout << k2;
+    cout << "Carré après translater(7, 2) :" << endl;
+    k2.translater(7, 2);
+    cout << k2;
+
+    cout << "\n--- Test Translater sur Cercle ---" << endl;
+    Cercle c2(5);
+    cout << "Cercle avant translater :" << endl;
+    cout << c2;
+    cout << "Cercle après translater(Point(15, 10)) :" << endl;
+    Point pTranslate(15, 10);
+    c2.translater(pTranslate);
+    cout << c2;
+
+    return 0;
 }
