@@ -19,6 +19,7 @@ class Cercle : public Forme{
 
         double perimetre() override;
         double surface() override;
+        void getBornes(double& minX, double& maxX, double& minY, double& maxY) const override;
 
         int getR() const;
 

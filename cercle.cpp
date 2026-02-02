@@ -25,6 +25,13 @@ double Cercle::surface(){
     return PI*r*r;
 }
 
+void Cercle::getBornes(double& minX, double& maxX, double& minY, double& maxY) const {
+    minX = this->p.getX() - this->r;
+    maxX = this->p.getX() + this->r;
+    minY = this->p.getY() - this->r;
+    maxY = this->p.getY() + this->r;
+}
+
 ostream& operator<<(ostream&s,Cercle const& c){
     s << dynamic_cast<const Forme&>(c) << " | Cercle, rayon: " << c.getR() << endl;
     return s;

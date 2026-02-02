@@ -3,6 +3,7 @@
 #include "rectangle.h"
 #include "carre.h"
 #include "cercle.h"
+#include "listeformes.h"
 
 using namespace std;
 
@@ -107,6 +108,40 @@ int main(){
     Point pTranslate(15, 10);
     c2.translater(pTranslate);
     cout << c2;
+
+
+    // ==========================================
+    //      TESTS LISTE FORMES (EX 5)
+    // ==========================================
+    cout << "\n--- Test ListeFormes ---" << endl;
+    ListeFormes liste;
+    
+    // On ajoute les formes existantes (attention elles ont ete modifiees par les tests precedents)
+    // r2 (Rectangle 8x4) translate de (10,5)
+    // k2 (Carre 3) translate de (7,2)
+    // c2 (Cercle R=5) translate de (15,10)
+    
+    cout << "Ajout de r2, k2, c2 a la liste..." << endl;
+    liste.ajouter(&r2);
+    liste.ajouter(&k2);
+    liste.ajouter(&c2);
+    
+    cout << "Nombre de formes : " << liste.getNbFormes() << endl;
+    
+    double surfTot = liste.surfaceTotale();
+    cout << "Surface totale de la liste : " << surfTot << endl;
+    // Verification manuelle : 
+    // r2 : 8*4 = 32
+    // k2 : 3*3 = 9
+    // c2 : PI*5*5 = 78.5
+    // Total attendu approx : 119.5
+    
+    double minX, maxX, minY, maxY;
+    liste.boiteEnglobante(minX, maxX, minY, maxY);
+    cout << "Boite englobante : " << endl;
+    cout << "Min X : " << minX << " Max X : " << maxX << endl;
+    cout << "Min Y : " << minY << " Max Y : " << maxY << endl;
+
 
     return 0;
 }

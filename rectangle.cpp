@@ -30,6 +30,15 @@ double Rectangle::surface(){
     return this->h*this->l;
 }
 
+void Rectangle::getBornes(double& minX, double& maxX, double& minY, double& maxY) const {
+    double halfL = this->l / 2.0;
+    double halfH = this->h / 2.0;
+    minX = this->p.getX() - halfL;
+    maxX = this->p.getX() + halfL;
+    minY = this->p.getY() - halfH;
+    maxY = this->p.getY() + halfH;
+}
+
 ostream& operator<<(ostream&s,Rectangle const& r){
     s << "Position (" << r.p.getX() << "," << r.p.getY() << ") | Rectangle, longueur: " << r.getL() << " hauteur: " << r.getH() << endl;
     return s;

@@ -21,6 +21,7 @@ class Rectangle : public Forme{
 
         double perimetre() override;
         double surface() override;
+        void getBornes(double& minX, double& maxX, double& minY, double& maxY) const override;
 
         int getL() const;
         int getH() const;

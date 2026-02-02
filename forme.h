@@ -18,6 +18,7 @@ class Forme{
 
         virtual double perimetre() = 0;
         virtual double surface() = 0;
+        virtual void getBornes(double& minX, double& maxX, double& minY, double& maxY) const = 0;
 
         void translater(double dx, double dy);
         void translater(const Point &p);
