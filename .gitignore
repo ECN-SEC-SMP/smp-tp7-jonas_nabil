@@ -1,0 +1,4 @@
+*.o 
+*.pdf 
+tp_class
+.vscode
